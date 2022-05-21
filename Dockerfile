@@ -5,7 +5,7 @@ COPY go.mod ./
 COPY go.sum ./
 RUN go mod download
 COPY *.go ./
-RUN go build -o prometheus-storagebox-exporter
+RUN go build -o ./prometheus-storagebox-exporter .
 
 FROM alpine:latest
 WORKDIR /app/
