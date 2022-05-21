@@ -5,7 +5,7 @@ COPY go.mod ./
 COPY go.sum ./
 RUN go mod download
 COPY *.go ./
-RUN go build -o ./prometheus-storagebox-exporter .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o ./prometheus-storagebox-exporter .
 
 FROM alpine:latest
 WORKDIR /app/
