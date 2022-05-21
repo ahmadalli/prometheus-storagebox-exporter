@@ -11,8 +11,6 @@ FROM alpine:latest
 WORKDIR /app/
 EXPOSE 9509
 
-USER nonroot:nonroot
-
 COPY --from=build /src/prometheus-storagebox-exporter .
 
 ENTRYPOINT ["./prometheus-storagebox-exporter"]
