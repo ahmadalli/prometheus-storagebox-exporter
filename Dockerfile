@@ -13,4 +13,4 @@ EXPOSE 9509
 
 COPY --from=build /src/prometheus-storagebox-exporter ./
 
-ENTRYPOINT ["./prometheus-storagebox-exporter"]
+ENTRYPOINT ["/app/prometheus-storagebox-exporter"]
